@@ -4,9 +4,7 @@ WITH
 			*
 			,LIST_UNIQUE(
 				LIST_TRANSFORM(
-					STRING_SPLIT(
-						SPLIT_PART(url, '?', 2), '&'
-					)
+					STRING_SPLIT(SPLIT_PART(url, '?', 2), '&')
 					,x -> SPLIT_PART(x, '=', 1)
 				)
 			) AS param_cnt
